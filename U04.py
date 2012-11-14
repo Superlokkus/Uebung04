@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # encoding=utf-8
 
+import time
+
 """Übung 04 Fibonacci"""
 #Markus Klemm WS12/13 Phy-BA
 
@@ -15,7 +17,13 @@ def fibo(n):
 
 assert (fibo(10) == 55)
 
-print fibo(10)
-print fibo(20)
-print fibo(30)
-print fibo(40)
+def ausgabe(n):
+    """Funktion zur Ausgabe der n-ten Fibonacci Zahlen mit Zeitverbrauch"""
+    t1 = time.time()
+    print "Die Fibonaccizahl der  " + str(n) + ".ten Ordnung ist:"
+    print fibo(n)
+    print "Und benötigte " + str(t1 - time.time()) + " Sekunden"
+
+
+for x in (range(10,40,10)): #Ausgabe der geforderten Fibonaccizahlen
+    ausgabe(x)
