@@ -58,6 +58,12 @@ def iausgabe(n):
     print "Und benötigte " + str(t1 - time.time()) + " Sekunden und rufte ",
     print str(N) + " mal die Funktion auf"
 
-
-for x in (range(10,40,10)): #Ausgabe der geforderten Fibonaccizahlen interativ
+for x in (range(10,60,10)): #Ausgabe der geforderten Fibonaccizahlen interativ
     iausgabe(x)
+    
+
+#5.
+for x in (range(2,50)): #Verhältnis zu /0 nicht defniert und -1 auch nicht
+    print "Verhlältnis Glied "+ str(x) + " zu Glied " + str(x-1) +" ",
+    print "%8.20f" % float(float(ifibo(x)) / float(ifibo(x-1)))
+
