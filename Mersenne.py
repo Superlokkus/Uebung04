@@ -21,11 +21,9 @@ def LucasLehmerFolge(p):
     """Gibt das Element p der Folge s des Lucas Lehmer Primzahlentests zurück,
     undefinierte Elemente = 0"""
     s = [0,4]
-    for x in (range(2,p)):
+    for x in (range(2,p+1)):
         s.append(s[(x-1)]**2 - 2)
-    return s
+    return s[p]
         
-print LucasLehmerFolge(10)
-
-#for x in (range(1,1000)):
- #   print PrimMersenne(x)
+for x in (range(1,1000)):
+    print PrimMersenne(x)
