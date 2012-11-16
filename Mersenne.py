@@ -20,12 +20,12 @@ def PrimMersenne(p):
 def LucasLehmerFolge(p):
     """Gibt das Element p der Folge s des Lucas Lehmer Primzahlentests zurück,
     undefinierte Elemente = 0"""
-    if (p == 1):
-        return 4
-    elif(p<1):
-        return 0
-    else:
-        return (LucasLehmerFolge(p-1)**2 - 2)
+    s = [0,4]
+    for x in (range(2,p)):
+        s.append(s[(x-1)]**2 - 2)
+    return s
+        
+print LucasLehmerFolge(10)
 
-for x in (range(1,10)):
-    print PrimMersenne(x)
+#for x in (range(1,1000)):
+ #   print PrimMersenne(x)
