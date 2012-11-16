@@ -9,13 +9,13 @@ def PrimMersenne(p):
     aus, wenn diese eine Primzahl ist. Benutzt hierfür die LucasLehmerFolge 
     Funktion."""
     m = 2**p - 1 #=Mersennezahl
+    if (p==2):
+        return m
     
-    if (p>=3 & LucasLehmerFolge(p-1) % m ==0): #Prüfung ob Primzahl
-        return m
-    elif (p==2):
-        return m
-    else:
-        return
+    for x in (range(3,p)):
+        if (LucasLehmerFolge(x-1) % m ==0):
+            return m
+    return
 
 def LucasLehmerFolge(p):
     """Gibt das Element p der Folge s des Lucas Lehmer Primzahlentests zurück,
@@ -25,5 +25,8 @@ def LucasLehmerFolge(p):
         s.append(s[(x-1)]**2 - 2)
     return s[p]
         
-for x in (range(1,1000)):
+for x in (range(1,25)):
     print PrimMersenne(x)
+    
+print "Große Zahl"    
+print PrimMersenne(11213)
