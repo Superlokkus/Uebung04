@@ -12,18 +12,17 @@ def PrimMersenne(p):
     if (p==2):
         return m
     
+    #LucasLehmerFolge
+    s = [0,4]
+    for x in (range(2,p)):
+        s.append(s[x-1]**2 - 2)
+    
+    #LucasLehmerTest
     for x in (range(3,p)):
-        if (LucasLehmerFolge(x-1) % m ==0):
+        if (s[x-1] % m ==0):
             return m
     return
 
-def LucasLehmerFolge(p):
-    """Gibt das Element p der Folge s des Lucas Lehmer Primzahlentests zurück,
-    undefinierte Elemente = 0"""
-    s = [0,4]
-    for x in (range(2,p+1)):
-        s.append(s[(x-1)]**2 - 2)
-    return s[p]
         
 for x in (range(1,25)):
     print PrimMersenne(x)
