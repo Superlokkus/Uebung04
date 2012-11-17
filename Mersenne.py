@@ -18,9 +18,9 @@ def PrimMersenne(p):
         s.append(s[x-1]**2 - 2)
     
     #LucasLehmerTest
-    for x in (range(3,p)):
-        if (s[x-1] % m ==0):
+    if (s[p-1] % m == 0):
             return m
+        
     return
 
         
